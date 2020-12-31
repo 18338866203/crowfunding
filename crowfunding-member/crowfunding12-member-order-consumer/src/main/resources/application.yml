@@ -1,0 +1,26 @@
+server:
+  port: 7000
+
+spring:
+  application:
+    name: crowd-order
+  redis:
+    host: 192.168.56.103
+    session:
+      store-type: redis
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+
+#aliyun:
+#  oss:
+#    access-key-id: LTAI4GA4L1h1issdCCdBQ58R
+#    access-key-secret: IyDMZ7G0sUaqPIcFXyQCNFN3zukBZ2
+#    bucket-domain: http://crowd201227.oss-cn-hangzhou.aliyuncs.com
+#    bucket-name: crowd201227
+#    end-point: http://oss-cn-hangzhou.aliyuncs.com

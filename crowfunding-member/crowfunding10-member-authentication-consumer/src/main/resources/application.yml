@@ -1,0 +1,28 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: crowd-auth
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 192.168.56.103
+    session:
+      store-type: redis
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+short:
+  message:
+    host: https://feginesms.market.alicloudapi.com
+    path: /codeNotice
+    method: GET
+    appCode: 7f40e793b829411898f3b49a79b87f53
+    sign: 151003
+    skin: 84683
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

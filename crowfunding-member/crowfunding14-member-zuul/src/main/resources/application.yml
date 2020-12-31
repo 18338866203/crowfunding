@@ -1,0 +1,32 @@
+server:
+  port: 80
+spring:
+  application:
+    name: crowd-zuul
+  redis:
+    host: 192.168.56.103
+    session:
+      store-type: redis
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+zuul:
+  host:
+    connect-timeout-millis: 15000 #HTTP连接超时大于Hystrix的超时时间
+    socket-timeout-millis: 60000   #socket超时
+  routes: # 自定义路由规则
+    crowd-portal: # 自定义路由规则名称
+      service-id: crowd-auth # 针对crowd-auth微服务设置路由规则
+      path: /** # 通过 /** 访问crowd-auth，这里一定是/**,不然/路径后面的多层路径将无法访问
+    crowd-project:
+      service-id: crowd-project
+      path: /project/**
+    crowd-order:
+      service-id: crowd-order
+      path: /order/**
+    crowd-pay:
+      service-id: crowd-pay
+      path: /pay/**
+  ignored-services: "*"  # 忽略原本微服务名
+  sensitive-headers: "*"  # 在Zuul向其他微服务重定向时保持原本头信息（请求头、响应头）
