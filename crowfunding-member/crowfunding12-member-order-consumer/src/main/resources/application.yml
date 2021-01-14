@@ -19,8 +19,8 @@ eureka:
 
 #aliyun:
 #  oss:
-#    access-key-id: LTAI4GA4L1h1issdCCdBQ58R
-#    access-key-secret: IyDMZ7G0sUaqPIcFXyQCNFN3zukBZ2
+#    access-key-id: *****
+#    access-key-secret: ******
 #    bucket-domain: http://crowd201227.oss-cn-hangzhou.aliyuncs.com
 #    bucket-name: crowd201227
 #    end-point: http://oss-cn-hangzhou.aliyuncs.com
